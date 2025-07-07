@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  ridchat-ai:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+    restart: unless-stopped
+    
+  # Optional: Add PostgreSQL database
+  # postgres:
+  #   image: postgres:15
+  #   environment:
+  #     POSTGRES_DB: ridchat
+  #     POSTGRES_USER: ridchat
+  #     POSTGRES_PASSWORD: your_password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+
+# volumes:
+#   postgres_data:

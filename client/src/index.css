@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(142, 76%, 36%);
+  --primary-foreground: hsl(355, 7%, 97%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Chat specific colors - Light theme */
+  --chat-bg: hsl(0, 0%, 100%);
+  --chat-surface: hsl(0, 0%, 98%);
+  --chat-surface-light: hsl(0, 0%, 95%);
+  --chat-text: hsl(0, 0%, 7%);
+  --chat-text-secondary: hsl(0, 0%, 45%);
+  --chat-border: hsl(0, 0%, 85%);
+  --chat-primary: hsl(142, 76%, 36%);
+}
+
+.dark {
+  --background: hsl(0, 0%, 13%);
+  --foreground: hsl(0, 0%, 93%);
+  --muted: hsl(0, 0%, 18%);
+  --muted-foreground: hsl(0, 0%, 71%);
+  --popover: hsl(0, 0%, 18%);
+  --popover-foreground: hsl(0, 0%, 93%);
+  --card: hsl(0, 0%, 18%);
+  --card-foreground: hsl(0, 0%, 93%);
+  --border: hsl(0, 0%, 30%);
+  --input: hsl(0, 0%, 30%);
+  --primary: hsl(142, 76%, 36%);
+  --primary-foreground: hsl(355, 7%, 97%);
+  --secondary: hsl(0, 0%, 18%);
+  --secondary-foreground: hsl(0, 0%, 93%);
+  --accent: hsl(0, 0%, 18%);
+  --accent-foreground: hsl(0, 0%, 93%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(0, 0%, 83.9%);
+  
+  /* Chat specific colors - Dark theme */
+  --chat-bg: hsl(0, 0%, 13%);
+  --chat-surface: hsl(0, 0%, 18%);
+  --chat-surface-light: hsl(0, 0%, 25%);
+  --chat-text: hsl(0, 0%, 93%);
+  --chat-text-secondary: hsl(0, 0%, 71%);
+  --chat-border: hsl(0, 0%, 30%);
+  --chat-primary: hsl(142, 76%, 36%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--chat-bg);
+    color: var(--chat-text);
+  }
+}
+
+@layer components {
+  .chat-message-user {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .chat-message-ai {
+    background-color: var(--chat-surface);
+    color: var(--chat-text);
+  }
+  
+  .chat-sidebar {
+    background-color: var(--chat-surface);
+    border-color: var(--chat-border);
+  }
+  
+  .chat-input {
+    background-color: var(--chat-surface-light);
+    border-color: var(--chat-border);
+    color: var(--chat-text);
+  }
+  
+  .chat-input:focus {
+    border-color: var(--chat-primary);
+    box-shadow: 0 0 0 2px hsl(142, 76%, 36%, 0.2);
+  }
+}
